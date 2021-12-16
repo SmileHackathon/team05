@@ -8,7 +8,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/b1019044/Desktop/picture-frame-app-master/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/b1019044/Desktop/picture-frame-app-master/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/b1019044/Desktop/picture-frame-app-master/app/src/main/res/layout/activity_second.xml" value="0.22" />
+        <entry key="..\:/Users/b1019044/Desktop/picture-frame-app-master/app/src/main/res/layout/second_activity.xml" value="0.25" />
       </map>
     </option>
   </component>
