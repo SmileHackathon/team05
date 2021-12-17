@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    var imageView : ImageView? = null
+    var imagePath = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         val et:EditText =findViewById(R.id.et)
         val et2:EditText =findViewById(R.id.et2)//(仮２)
 
+        imageView = findViewById<ImageView>(R.id.imageView)
+
+
+
         //2)ボタンを押したら次の画面へ
         btnStart.setOnClickListener{
             val intent = Intent(this,SecondActivity::class.java)
@@ -30,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("MY_TITLE",et.text.toString())
 
             intent.putExtra("MY_TEXT",et2.text.toString())//(仮２)
+           // intent.putExtra("imageKey",imageView)
+            intent.putExtra("imageKey",imagePath)
 
             startActivity(intent)
         }
@@ -51,9 +60,13 @@ class MainActivity : AppCompatActivity() {
                 try {
                     data?.data?.also { uri ->
                         val inputStream = contentResolver?.openInputStream(uri)
+                         imagePath = uri.toString()
+
+                        //Log.d("aaa",uri.toString())
                         val image = BitmapFactory.decodeStream(inputStream)
-                        val imageView = findViewById<ImageView>(R.id.imageView)
-                        imageView.setImageBitmap(image)
+                        //val imageView = findViewById<ImageView>(R.id.imageView)
+
+                        imageView?.setImageBitmap(image)
                     }
                 } catch (e: Exception) {
                     Toast.makeText(this, "エラーが発生しました", Toast.LENGTH_LONG).show()
@@ -73,4 +86,5 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val READ_REQUEST_CODE: Int = 42
     }
+
 }
