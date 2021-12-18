@@ -13,7 +13,7 @@
 ## 開発技術
 - 利用したプログラミング言語 : Kotlin
 - 利用したフレームワーク・ライブラリ
-- その他開発に使用したツール : Android studio
+- その他開発に使用したツール : Android studio, Github, Miro, Notion, Adobe XD, Discord, Slack
 
 ## 役割分担
 - 貴舩怜士：Kotlinを用いたアプリ開発
